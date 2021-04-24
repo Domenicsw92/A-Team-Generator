@@ -4,6 +4,8 @@ const Engineer = require("../lib/Engineer");
 const fs = require('fs');
 
 
+
+
 const html = () => 
 `<!DOCTYPE html>
 <html lang="en">
@@ -20,15 +22,15 @@ const html = () =>
     <title>Team Generator </title>
 </head>
 
-<body>
+<body>r
     <header class="jumbotron bg-danger  text-center ">
         <h1>${teamname}</h1>
         <h2>My team</h2>
-    </header>
+    </header>  
 
     <main class="container my-5">
         <div class="d-flex justify-content-center flex-wrap">
-            //Cards go here
+            (Employee Cards)
     
             </div>
     </main>
@@ -88,3 +90,7 @@ const engineerCard = () =>
     </p>
 </div>
 `
+
+const TeamName = []
+
+console.log (TeamName)

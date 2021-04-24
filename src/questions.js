@@ -3,7 +3,7 @@ const Manager = require("../lib/Manager")
 const Intern = require("../lib/Intern")
 const Engineer = require("../lib/Engineer");
 
-const buildIndex = require("./index")
+const buildIndex = []
 
 const TeamName = []
 const teamMembers = []
@@ -74,7 +74,7 @@ function addEmployee() {
             }
             else if (empRespose === "Done adding Members Build team" ){
                 console.log("building team")
-                buildIndex(teamMembers)
+                buildIndex.push(teamMembers, TeamName)
             }
         })
 }
@@ -147,3 +147,4 @@ function internQuestions() {
         })
 }
 
+ module.exports = ( TeamName, teamMembers

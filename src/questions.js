@@ -3,7 +3,7 @@ const Manager = require("../lib/Manager")
 const Intern = require("../lib/Intern")
 const Engineer = require("../lib/Engineer");
 
-const buildIndex = []
+const html = require('./page-template.js')
 
 const TeamName = []
 const teamMembers = []
@@ -43,9 +43,6 @@ function startQuestions() {
             const manager = new Manager(response.Name, response.Id, response.Email, response.Number)
             teamMembers.push(manager);
             console.log(teamMembers);
-            const teamName = (response.teamName)
-            TeamName.push(teamName);
-            console.log(TeamName);
             addEmployee()
         })
 }
@@ -74,7 +71,7 @@ function addEmployee() {
             }
             else if (empRespose === "Done adding Members Build team" ){
                 console.log("building team")
-                buildIndex.push(teamMembers, TeamName)
+                html(teamMembers)
             }
         })
 }
@@ -147,4 +144,4 @@ function internQuestions() {
         })
 }
 
- module.exports = ( TeamName, teamMembers
+ module.exports = buildIndex

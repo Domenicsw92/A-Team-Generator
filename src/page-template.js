@@ -1,6 +1,7 @@
 const Manager = require("../lib/Manager");
 const Intern = require("../lib/Intern");
 const Engineer = require("../lib/Engineer");
+const questions = require("./questions")
 const fs = require('fs');
 
 
@@ -24,7 +25,7 @@ const html = () =>
 
 <body>r
     <header class="jumbotron bg-danger  text-center ">
-        <h1>${teamname}</h1>
+        <h1></h1>
         <h2>My team</h2>
     </header>  
 
@@ -91,6 +92,4 @@ const engineerCard = () =>
 </div>
 `
 
-const TeamName = []
-
-console.log (TeamName)
+module.exports = html

@@ -2,7 +2,8 @@ const inquirer = require("inquirer");
 const Manager = require("../lib/Manager")
 const Intern = require("../lib/Intern")
 const Engineer = require("../lib/Engineer");
-// const Employee = require("./Employee");
+
+const buildIndex = require("./index")
 
 const TeamName = []
 const teamMembers = []
@@ -52,7 +53,7 @@ function startQuestions() {
 function addEmployee() {
     inquirer.prompt([
         {
-            type: "checkbox",
+            type: "list",
             message: "Add a team member",
             name: "Member",
             choices: [
@@ -64,17 +65,22 @@ function addEmployee() {
         },
     ])
         .then(function (empRespose) {
+            console.log(empRespose)
             if (empRespose.Member === "Engineer") {
                 engineerQuestions()
             }
             if (empRespose === "Intern") {
                 internQuestions()
             }
+            else if (empRespose === "Done adding Members Build team" ){
+                console.log("building team")
+                buildIndex(teamMembers)
+            }
         })
 }
 
 function engineerQuestions() {
-   return inquirer.prompt([
+    return inquirer.prompt([
         {
             type: "input",
             message: "What is the Engineer's Name",
@@ -100,6 +106,7 @@ function engineerQuestions() {
             const engineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGithub)
             teamMembers.push(engineer);
             console.log(teamMembers);
+            addEmployee();
         })
 }
 
@@ -132,21 +139,11 @@ function internQuestions() {
             name: "School"
         }
     ])
-    .then.then(function (response) {
-        const intern = new Intern(response.internName, response.internId, response.internEmail, response.internGithub, response.School)
-        teamMembers.push(intern);
-        console.log(teamMembers);
-    })
+        .then.then(function (response) {
+            const intern = new Intern(response.internName, response.internId, response.internEmail, response.internGithub, response.School)
+            teamMembers.push(intern);
+            console.log(teamMembers);
+            addEmployee();
+        })
 }
-
-
-    // .then(function (answer) {
-    //     console.log(answer)}
-    //     if (answer.Member === "Done adding Members Build team") {
-    //         console.log("exiting")
-    //         process.exit()
-    //     }
-    //     addEmployee(answer)
-    // }
-    // )
 

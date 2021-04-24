@@ -105,34 +105,34 @@
 //     }
 
 //     if (answer.Member[0] === "Intern") {
-//         console.log("adding Intern")
-//         inquirer.prompt([
-//             {
-//                 type: "input",
-//                 message: "What is the Intern's Name",
-//                 name: "internName"
-//             },
-//             {
-//                 type: "input",
-//                 message: "What is the Intern's Id",
-//                 name: "internID"
-//             },
-//             {
-//                 type: "input",
-//                 message: "What is the Intren's Email",
-//                 name: "internEmail"
-//             },
-//             {
-//                 type: "input",
-//                 message: "What is the Intern's Github",
-//                 name: "internGithub"
-//             },
-//             {
-//                 type: "input",
-//                 message: "What is the Intern's School Name",
-//                 name: "internSchool"
-//             }
-//         ])
+        // console.log("adding Intern")
+        // inquirer.prompt([
+        //     {
+        //         type: "input",
+        //         message: "What is the Intern's Name",
+        //         name: "internName"
+        //     },
+        //     {
+        //         type: "input",
+        //         message: "What is the Intern's Id",
+        //         name: "internID"
+        //     },
+        //     {
+        //         type: "input",
+        //         message: "What is the Intren's Email",
+        //         name: "internEmail"
+        //     },
+        //     {
+        //         type: "input",
+        //         message: "What is the Intern's Github",
+        //         name: "internGithub"
+        //     },
+        //     {
+        //         type: "input",
+        //         message: "What is the Intern's School Name",
+        //         name: "internSchool"
+        //     }
+        // ])
 //         .then(function (answer) {
 //             //create the engineer 
 //             //add engineer to list

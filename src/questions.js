@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
-// const Manager = require("./lib/Manager")
-// const Intern = require("./lib/Intern")
-// const Engineer = require("./lib/Engineer");
+const Manager = require("../lib/Manager")
+const Intern = require("../lib/Intern")
+const Engineer = require("../lib/Engineer");
 // const Employee = require("./Employee");
 
 const TeamName = []
@@ -67,11 +67,14 @@ function addEmployee() {
             if (empRespose.Member === "Engineer") {
                 engineerQuestions()
             }
+            if (empRespose === "Intern") {
+                internQuestions()
+            }
         })
 }
 
 function engineerQuestions() {
-    inquirer.prompt([
+   return inquirer.prompt([
         {
             type: "input",
             message: "What is the Engineer's Name",
@@ -100,6 +103,41 @@ function engineerQuestions() {
         })
 }
 
+function internQuestions() {
+    console.log("adding Intern")
+    return inquirer.prompt([
+        {
+            type: "input",
+            message: "What is the Intern's Name",
+            name: "internName"
+        },
+        {
+            type: "input",
+            message: "What is the Intern's Id",
+            name: "internID"
+        },
+        {
+            type: "input",
+            message: "What is the Intren's Email",
+            name: "internEmail"
+        },
+        {
+            type: "input",
+            message: "What is the Intern's Github",
+            name: "internGithub"
+        },
+        {
+            type: "input",
+            message: "What is the Intern's School Name",
+            name: "School"
+        }
+    ])
+    .then.then(function (response) {
+        const intern = new Intern(response.internName, response.internId, response.internEmail, response.internGithub, response.School)
+        teamMembers.push(intern);
+        console.log(teamMembers);
+    })
+}
 
 
     // .then(function (answer) {

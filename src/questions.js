@@ -3,20 +3,14 @@ const Manager = require("../lib/Manager")
 const Intern = require("../lib/Intern")
 const Engineer = require("../lib/Engineer");
 
-const html = require('./page-template.js')
+const buildHtml = require('./page-template')
 
-const TeamName = []
 const teamMembers = []
 
 startQuestions();
 
 function startQuestions() {
     return inquirer.prompt([
-        {
-            type: "Input",
-            message: "What is your Team name?",
-            name: "teamName"
-        },
         {
             type: "input",
             message: "What is the Manager's Name",
@@ -66,12 +60,12 @@ function addEmployee() {
             if (empRespose.Member === "Engineer") {
                 engineerQuestions()
             }
-            if (empRespose === "Intern") {
+            if (empRespose.Member === "Intern") {
                 internQuestions()
             }
             else if (empRespose === "Done adding Members Build team" ){
                 console.log("building team")
-                html(teamMembers)
+                buildHtml(teamMembers)
             }
         })
 }
@@ -108,7 +102,6 @@ function engineerQuestions() {
 }
 
 function internQuestions() {
-    console.log("adding Intern")
     return inquirer.prompt([
         {
             type: "input",
@@ -136,12 +129,10 @@ function internQuestions() {
             name: "School"
         }
     ])
-        .then.then(function (response) {
+    .then(function (response) {
             const intern = new Intern(response.internName, response.internId, response.internEmail, response.internGithub, response.School)
             teamMembers.push(intern);
             console.log(teamMembers);
             addEmployee();
         })
 }
-
- module.exports = buildIndex

@@ -55,15 +55,15 @@ function addEmployee() {
             ]
         },
     ])
-        .then(function (empRespose) {
-            console.log(empRespose)
-            if (empRespose.Member === "Engineer") {
+        .then(function (response) {
+            console.log(response)
+            if (response.Member === "Engineer") {
                 engineerQuestions()
             }
-            if (empRespose.Member === "Intern") {
+            if (response.Member === "Intern") {
                 internQuestions()
             }
-            else if (empRespose === "Done adding Members Build team" ){
+            else if (response.Member === "Done adding Members Build team" ){
                 console.log("building team")
                 buildHtml(teamMembers)
             }

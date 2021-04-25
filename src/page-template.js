@@ -18,12 +18,11 @@ function draftTemplate(template , key, value){
 async function buildHtml(Member){
     const teamArry =[]
     const[Managertemp, MainTemp, Interntemp, Engineertemp] = await Promise.all([
-        readFile(_dirname  + "Managertemp.html", "utf8"),
-        readFile(_dirname  + "MainTemp.html", "utf8"),
-        readFile(_dirname  + "Interntemp.html", "utf8"),
-        readFile(_dirname  + "Engineertemp.html", "utf8"),
+        readFile(__dirname  + "/Managertemp.html", "utf8"),
+        readFile(__dirname  + "/MainTemp.html", "utf8"),
+        readFile(__dirname  + "/Interntemp.html", "utf8"),
+        readFile(__dirname  + "/Engineertemp.html", "utf8"),
     ])
-
     const internCard = Member.filter(employee => employee instanceof Intern).map(employee =>
         {let template = Interntemp;
             for (const key in employee){

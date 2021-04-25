@@ -6,7 +6,7 @@ test("Updated role with Manager.", () => {
 })
 
 test("Can set a github username in the constructor.", () => {
-    const officeNumber = "Domenicsw92"
+    const officeNumber = 123123123
     const eT = new Manager("name", "id", "email", officeNumber )
     expect(eT.getOfficeNumber()).toBe(officeNumber)
 })

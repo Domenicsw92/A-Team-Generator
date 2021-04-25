@@ -14,7 +14,7 @@ test ("Can set a name in the constructors." , () =>{
 }) 
 
 test ("Can set a id in the constructors." , () =>{
-    const id = "100"
+    const id = 100
     const eT = new Employee("name", id, "email")
     expect (eT.getId()).toBe(id) 
 })

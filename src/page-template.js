@@ -46,7 +46,7 @@ async function buildHtml(Member){
         })
         teamArry.push(managerCard, internCard, engineerCard)
         const generatedTeamHtml = draftTemplate(MainTemp, "body" ,teamArry.join(""))
-        await writeFile("Team.html", generatedTeamHtml, function(err){
+        await writeFile("../output/Team.html", generatedTeamHtml, function(err){
             if(err) throw err
         })
 }

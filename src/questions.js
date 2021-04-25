@@ -19,7 +19,7 @@ function startQuestions() {
         {
             type: "input",
             message: "What is the Manager's Id",
-            name: "ID"
+            name: "Id"
         },
         {
             type: "input",
@@ -80,7 +80,7 @@ function engineerQuestions() {
         {
             type: "input",
             message: "What is the Engineer's Id",
-            name: "engineerID"
+            name: "engineerId"
         },
         {
             type: "input",
@@ -111,7 +111,7 @@ function internQuestions() {
         {
             type: "input",
             message: "What is the Intern's Id",
-            name: "internID"
+            name: "internId"
         },
         {
             type: "input",
